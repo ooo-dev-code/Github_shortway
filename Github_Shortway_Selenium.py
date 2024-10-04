@@ -6,13 +6,14 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-
 import time
 from datetime import date
 
+# Get the day
 today = date.today()
 dates = today.strftime('%d')
 
+# Get different variable every day
 if int(dates)%2 == 0:
     science = "quantum physics"
     informatic = "Blender and js"
@@ -28,12 +29,14 @@ else:
     phrase_de_fin = " One day I'll be a good scientist;"
     end = "This code has been changed by my program."
 
+# Getting to the site
 driver = webdriver.Chrome()
 
 url = "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fooo-dev-code"
 
 driver.get(url)
 
+# Sign in
 username = driver.find_element(By.ID, "login_field")
 username.send_keys("username")
 
@@ -42,9 +45,10 @@ mdp.send_keys("mdp")
 
 submit = driver.find_element(By.NAME, "commit").click()
 
+# Find the text box
 profil = driver.find_element(by=By.XPATH, value="/html/body/div[1]/div[5]/main/div/div/div[2]/turbo-frame/div/div[1]/div/div/div[2]/a").click()
 
-
+# Write phrases with the variable defined before
 input_box = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, f"/html/body/div[1]/div[5]/div/main/turbo-frame/div/react-app/div/div/div[1]/div/div/div[2]/div[2]/div/div[3]/div[3]/div/div[2]/file-attachment/div/div/div[2]/div[2]/div[1]")))
 input_box.click()
 input_box.clear()
@@ -84,12 +88,14 @@ input_box8 = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPAT
 input_box8.click()
 input_box8.clear()
 
+# Commit
 Conclude1 = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, f"/html/body/div[1]/div[5]/div/main/turbo-frame/div/react-app/div/div/div[1]/div/div/div[2]/div[2]/div/div[3]/div[2]/div[2]/button")))
 Conclude1.click()
 
 Conclude2 = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, f"/html/body/div[4]/div[2]/div/div/div[3]/button[2]")))
 Conclude2.click()
 
+# Close page
 time.sleep(2)
 
 driver.quit()
