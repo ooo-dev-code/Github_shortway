@@ -94,7 +94,7 @@ Conclude1 = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH
 Conclude1.click()
 
 Conclude2 = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, f"/html/body/div[4]/div[2]/div/div/div[3]/button[2]")))
-Conclude2.click
+Conclude2.click()
 
 time.sleep(200)
 
