@@ -1,3 +1,8 @@
+# #CRONTAB
+# XPATH FINDER EXTENSION CHROME
+# SELENIUM
+# SUBPROCESS
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -47,7 +52,7 @@ profil = driver.find_element(by=By.XPATH, value="/html/body/div[1]/div[5]/main/d
 input_box = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, f"/html/body/div[1]/div[5]/div/main/turbo-frame/div/react-app/div/div/div[1]/div/div/div[2]/div[2]/div/div[3]/div[3]/div/div[2]/file-attachment/div/div/div[2]/div[2]/div[1]")))
 input_box.click()
 input_box.clear()
-input_box.send_keys("-> Hi, I am ooo-dev-code                                                             ")
+input_box.send_keys("-><b> Hi, I am ooo-dev-code                                                             </b>")
 
 input_box2 = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, f"/html/body/div[1]/div[5]/div/main/turbo-frame/div/react-app/div/div/div[1]/div/div/div[2]/div[2]/div/div[3]/div[3]/div/div[2]/file-attachment/div/div/div[2]/div[2]/div[2]")))
 input_box2.click()
